@@ -1,0 +1,3 @@
+# These should point to specifc versions and actively be controlled
+pipenv
+mysqlclient

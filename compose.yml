@@ -1,0 +1,16 @@
+services:
+  runner:
+    image: ${{ SECRETS.DOCKERHUB_ORG }}/actions-image:latest
+    environment:
+      - DEBIAN_FRONTEND=noninteractive
+      - TOKEN=${TOKEN}
+    deploy:
+      mode: replicated
+      replicas: 16
+      resources:
+        limits:
+          cpus: '2'
+          memory: 6G
+        reservations:
+          cpus: '2'
+          memory: 6G
